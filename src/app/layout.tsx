@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-updatedupdatedimport { Geist } from "next/font/google";
+import { Geist } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
