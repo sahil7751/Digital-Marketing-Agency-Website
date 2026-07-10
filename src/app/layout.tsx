@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from "next";
+import { Geist } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import "./globals.css";
+
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 
 export const metadata: Metadata = {
   title: { default: "Lumora | Digital Growth Agency", template: "%s | Lumora" },
@@ -14,5 +17,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: [{ media: "(prefers-color-scheme: light)", color: "#ffffff" }, { media: "(prefers-color-scheme: dark)", color: "#0f1220" }] };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" suppressHydrationWarning><body><ThemeProvider><Header /><main>{children}</main><Footer /></ThemeProvider></body></html>;
+  return <html lang="en" suppressHydrationWarning><body className={geist.className}><ThemeProvider><Header /><main>{children}</main><Footer /></ThemeProvider></body></html>;
 }
