@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { --canvas: 0 0% 100%; --foreground: 224 25% 12%; --muted: 220 20% 96%; --muted-foreground: 220 10% 42%; --surface: 0 0% 100%; --primary: 246 76% 60%; }
+  .dark { --canvas: 224 28% 8%; --foreground: 210 40% 98%; --muted: 224 20% 14%; --muted-foreground: 218 12% 68%; --surface: 224 24% 11%; --primary: 249 88% 72%; }
+  * { @apply border-slate-200 dark:border-slate-800; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-canvas text-foreground antialiased; }
+  :focus-visible { @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-canvas; }
+}
