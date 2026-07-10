@@ -1,5 +1,16 @@
-import { Container } from "@/components/ui/container";
+import { BlogPreview } from "@/components/home/blog-preview";
+import { Cta } from "@/components/home/cta";
+import { Faq } from "@/components/home/faq";
+import { Hero } from "@/components/home/hero";
+import { Newsletter } from "@/components/home/newsletter";
+import { PortfolioPreview } from "@/components/home/portfolio-preview";
+import { PricingPreview } from "@/components/home/pricing-preview";
+import { Process } from "@/components/home/process";
+import { ServicesPreview } from "@/components/home/services-preview";
+import { Statistics } from "@/components/home/statistics";
+import { Testimonials } from "@/components/home/testimonials";
+import { WhyChooseUs } from "@/components/home/why-choose-us";
 
 export default function HomePage() {
-  return <section className="py-24 sm:py-32"><Container><p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Lumora</p><h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">Digital growth, designed to compound.</h1><p className="mt-6 max-w-2xl text-lg text-muted-foreground">The initial application shell is ready. Page sections will be added in the next build phase.</p></Container></section>;
+  return <><Hero /><ServicesPreview /><WhyChooseUs /><Statistics /><PortfolioPreview /><Process /><Testimonials /><PricingPreview /><BlogPreview /><Faq /><Newsletter /><Cta /></>;
 }
