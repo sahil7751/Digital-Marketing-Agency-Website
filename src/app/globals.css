@@ -3,10 +3,14 @@
 @tailwind utilities;
 
 @layer base {
-  :root { --canvas: 0 0% 100%; --foreground: 224 25% 12%; --muted: 220 20% 96%; --muted-foreground: 220 10% 42%; --surface: 0 0% 100%; --primary: 246 76% 60%; }
-  .dark { --canvas: 224 28% 8%; --foreground: 210 40% 98%; --muted: 224 20% 14%; --muted-foreground: 218 12% 68%; --surface: 224 24% 11%; --primary: 249 88% 72%; }
-  * { @apply border-slate-200 dark:border-slate-800; }
+  :root { --canvas: 0 0% 100%; --foreground: 221 39% 11%; --muted: 220 14% 96%; --muted-foreground: 220 9% 46%; --surface: 0 0% 100%; --primary: 221 83% 53%; --secondary: 262 83% 58%; --accent: 187 94% 43%; --border: 220 13% 91%; }
+  .dark { --canvas: 222 47% 11%; --foreground: 210 40% 98%; --muted: 217 33% 17%; --muted-foreground: 215 20% 65%; --surface: 222 41% 14%; --primary: 217 91% 60%; --secondary: 263 90% 70%; --accent: 187 94% 43%; --border: 217 33% 22%; }
+  * { border-color: hsl(var(--border)); }
   html { scroll-behavior: smooth; }
-  body { @apply bg-canvas text-foreground antialiased; }
+  body { @apply bg-canvas text-foreground antialiased; font-feature-settings: "rlig" 1, "calt" 1; }
   :focus-visible { @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-canvas; }
+}
+
+@layer utilities {
+  .glass { @apply border border-white/40 bg-white/70 shadow-glass backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/60; }
 }
