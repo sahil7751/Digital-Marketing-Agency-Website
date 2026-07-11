@@ -1,0 +1,3 @@
+import { JsonLd } from "@/components/seo/json-ld"; import { absoluteUrl, createMetadata, siteConfig } from "@/lib/site";
+export const metadata = createMetadata({ title: "Services", description: "Strategy, creative, media, and lifecycle marketing services from Lumora.", path: "/services" });
+export default function Layout({ children }: { children: React.ReactNode }) { const service = { "@context": "https://schema.org", "@type": "Service", name: "Digital Marketing Services", provider: { "@type": "Organization", name: siteConfig.name, url: absoluteUrl("/") }, areaServed: "Worldwide", description: "Growth strategy, creative, performance media, SEO, lifecycle marketing, and measurement." }; return <><JsonLd data={service} />{children}</>; }
