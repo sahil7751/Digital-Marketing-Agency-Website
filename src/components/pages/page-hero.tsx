@@ -1,0 +1,5 @@
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Container } from "@/components/ui/container";
+import { Heading } from "@/components/ui/heading";
+export function PageHero({ eyebrow, title, description, cta = "Start a conversation", ctaHref = "/contact" }: { eyebrow: string; title: string; description: string; cta?: string; ctaHref?: string }) { return <section className="relative overflow-hidden py-16 sm:py-20 lg:py-28"><div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_75%_0%,rgba(37,99,235,.14),transparent_34%),radial-gradient(circle_at_20%_90%,rgba(124,58,237,.12),transparent_30%)]" /><Container className="max-w-4xl"><p className="text-sm font-semibold tracking-wide text-primary">{eyebrow}</p><Heading as="h1" size="display" className="mt-3">{title}</Heading><p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">{description}</p><div className="mt-8"><Button href={ctaHref}>{cta}<ArrowRight className="ml-2" size={17} /></Button></div></Container></section>; }
