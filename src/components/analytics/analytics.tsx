@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { trackEvent, trackPageView } from "@/lib/analytics/events";
 
@@ -10,8 +10,9 @@ const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
 export function Analytics() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  useEffect(() => { trackPageView(`${pathname}${searchParams.size ? `?${searchParams}` : ""}`); }, [pathname, searchParams]);
+  useEffect(() => {
+  trackPageView(pathname);
+}, [pathname]);
   useEffect(() => {
     if (pathname === "/pricing") { trackEvent("pricing_view", { location: pathname }); return; }
     const pricing = document.querySelector("#pricing");
