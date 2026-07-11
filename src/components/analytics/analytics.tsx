@@ -32,7 +32,12 @@ export function Analytics() {
       const card = target.closest("article");
       if (!eventName && card?.closest("#services")) trackEvent("service_card_click", { label: card.textContent?.trim().slice(0, 100), location: pathname });
       else if (!eventName && card?.closest("#work")) trackEvent("portfolio_click", { label: card.textContent?.trim().slice(0, 100), location: pathname });
-      else if (!eventName && /MIN READ/.test(card?.textContent || "")) trackEvent("blog_read", { label: card.textContent?.trim().slice(0, 100), location: pathname });
+      else if (!eventName && card && /MIN READ/.test(card.textContent || "")) {
+          trackEvent("blog_read", {
+            label: card.textContent?.trim().slice(0, 100),
+            location: pathname,
+          });
+        }
       if (target instanceof HTMLAnchorElement) {
         const href = target.href;
         if (target.protocol === "mailto:") trackEvent("email_click", { email: target.getAttribute("href") || "", location: pathname });
