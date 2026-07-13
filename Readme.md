@@ -300,10 +300,10 @@ B.Tech Information Technology Student
 MIT ADT University
 
 GitHub:
-https://github.com/yourusername
+https://github.com/sahil7751
 
 LinkedIn:
-https://linkedin.com/in/yourprofile
+https://linkedin.com/in/sahil-jirapure
 
 ---
 
