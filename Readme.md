@@ -14,22 +14,10 @@ The project was developed as part of a **Digital Marketing** course to demonstra
 
 # 🌐 Live Demo
 
-> https://your-project.vercel.app
+> digital-marketing-agency-gilt.vercel.app
 
 ---
 
-# 📸 Preview
-
-(Add screenshots here after deployment)
-
-- Homepage
-- Services
-- Portfolio
-- Pricing
-- Blog
-- Contact
-
----
 
 # ✨ Features
 
