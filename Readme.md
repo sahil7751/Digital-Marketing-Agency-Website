@@ -14,7 +14,7 @@ The project was developed as part of a **Digital Marketing** course to demonstra
 
 # 🌐 Live Demo
 
-> digital-marketing-agency-gilt.vercel.app
+> [digital-marketing-agency-gilt.vercel.app](https://digital-marketing-agency-gilt.vercel.app/)
 
 ---
 
