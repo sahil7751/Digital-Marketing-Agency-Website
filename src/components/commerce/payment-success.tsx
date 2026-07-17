@@ -1,0 +1,10 @@
+"use client";
+
+import { CheckCircle2, Home, ReceiptText } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { getLatestPurchase } from "@/lib/commerce/storage";
+import { Button } from "@/components/ui/button";
+
+export function PaymentSuccess() { const purchase = getLatestPurchase(); if (!purchase) return <div className="rounded-3xl border bg-surface p-8 text-center"><h1 className="text-3xl font-semibold">No recent payment found.</h1><p className="mt-3 text-muted-foreground">Choose a plan to begin your demo checkout.</p><Link href="/pricing" className="mt-6 inline-block font-semibold text-primary hover:underline">View plans</Link></div>; return <motion.div initial={{ opacity: 0, scale: .96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .45 }} className="mx-auto max-w-2xl rounded-3xl border bg-surface p-7 text-center shadow-glass sm:p-12"><CheckCircle2 className="mx-auto text-emerald-500" size={58} /><p className="mt-6 text-sm font-semibold text-primary">PAYMENT CONFIRMED</p><h1 className="mt-3 text-4xl font-semibold tracking-tight">Payment successful</h1><p className="mx-auto mt-4 max-w-lg text-muted-foreground">Thank you, {purchase.customer.name}. Your {purchase.planName} plan is confirmed and our team will be in touch shortly.</p><div className="mt-9 grid gap-3 rounded-2xl bg-muted p-5 text-left text-sm sm:grid-cols-2"><Detail label="Order ID" value={purchase.id} /><Detail label="Invoice number" value={purchase.invoiceNumber} /><Detail label="Selected plan" value={purchase.planName} /><Detail label="Amount" value={purchase.amount ? `₹${purchase.amount.toLocaleString("en-IN")}` : "Custom quote"} /></div><div className="mt-8"><Button href="/">Go to Home <Home className="ml-2" size={17} /></Button></div><p className="mt-5 flex items-center justify-center gap-2 text-xs text-muted-foreground"><ReceiptText size={14} />A demo receipt has been saved in this browser.</p></motion.div>; }
+function Detail({ label, value }: { label: string; value: string }) { return <div><p className="text-xs text-muted-foreground">{label}</p><p className="mt-1 font-semibold">{value}</p></div>; }
