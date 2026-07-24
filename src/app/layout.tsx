@@ -90,7 +90,8 @@ export default function RootLayout({
 function gtag(){dataLayer.push(arguments);}
 window.gtag = gtag;
 gtag('js', new Date());
-gtag('config', 'G-1WBGM48TGH');`,
+gtag('config', 'G-1WBGM48TGH');
+gtag('config', 'AW-18315023096');`,
           }}
         />
       </head>
